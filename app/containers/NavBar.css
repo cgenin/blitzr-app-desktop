@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3px;
+}
+
+.container h1 {
+    margin: 10px;
+}
+
+.container div.right {
+    margin: 10px;
+}

@@ -1,0 +1,21 @@
+.wrap {
+    height: 60vh;
+}
+
+.vidsresults {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: auto;
+    height: 600px;
+    max-height: 600px;
+    left: 5px;
+    right: 5px;
+    justify-content: space-around;
+}
+
+.vidsresults .item {
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    width: 340px;
+}

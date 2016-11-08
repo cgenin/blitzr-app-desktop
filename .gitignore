@@ -1,5 +1,7 @@
 # Logs
 logs
+.idea
+*.iml
 *.log
 
 # Runtime data

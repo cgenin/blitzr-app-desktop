@@ -5,9 +5,10 @@ import {connect} from 'react-redux';
 import Youtube from '../components/Youtube';
 import * as youtubeActions from '../actions/youtube-search';
 
+
 function mapStateToProps(state) {
-  const {q} = state.youtubeSearch;
-  return {q};
+  const {q, items} = state.youtubeSearch;
+  return {q, items};
 }
 
 function mapDispatchToProps(dispatch) {
