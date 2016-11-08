@@ -7,8 +7,10 @@ import WindowListener from './WindowListener';
 
 export default class Blitzr extends Component {
   render() {
-    const height = this.props.screenHeight - 100;
-    const width = this.props.screenWidth - 30;
+    const screenHeight = this.props.screenHeight || 100;
+    const height = screenHeight - 100;
+    const screenWidth = this.props.screenWidth || 30;
+    const width = screenWidth - 30;
     return (
       <div style={{padding: '5px'}}>
         <WindowListener resize={this.props.resize}/>
