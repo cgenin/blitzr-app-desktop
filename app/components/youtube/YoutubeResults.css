@@ -13,9 +13,48 @@
     justify-content: space-around;
 }
 
+.vidsresults:hover {
+    cursor: pointer;
+}
+
 .vidsresults .item {
     margin: 5px;
     padding: 2px;
     text-align: center;
     width: 340px;
+}
+
+.vidsresults .item > h3 {
+    margin-top: -10px;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playbutton {
+    top: 55px;
+    float: left;
+    background-color: #de1313;
+    margin-left: 12px;
+}
+
+/*anmation*/
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
 }

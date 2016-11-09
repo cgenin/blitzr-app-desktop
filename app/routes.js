@@ -7,6 +7,7 @@ import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 import BlitzrPage from './containers/BlitzrPage';
 import YoutubePage from './containers/YoutubePage';
+import YoutubeVidPage from './containers/YoutubeVidPage';
 
 
 export default (
@@ -15,5 +16,6 @@ export default (
     <Route path="/counter" component={CounterPage}/>
     <Route path={BLITZR_URL} component={BlitzrPage}/>
     <Route path={YOUTUBE_URL} component={YoutubePage}/>
+    <Route path="/youtube/vid/:index" component={YoutubeVidPage}/>
   </Route>
 );
