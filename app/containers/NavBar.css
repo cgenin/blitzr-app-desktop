@@ -4,10 +4,30 @@
     padding-left: 3px;
 }
 
-.container h1 {
+.container h1,
+.container__sidenavbutton,
+.container div.container__right {
     margin: 10px;
 }
 
-.container div.right {
-    margin: 10px;
+.container__sidenavbutton {
+    margin-top: 5px;
+    display: none;
+}
+
+.container__sidenavbutton > button {
+    background-color: inherit;
+    color: whitesmoke;
+    padding-top: 3px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container div.container__right {
+        display: none;
+    }
+
+    .container__sidenavbutton {
+        display: block;
+    }
 }

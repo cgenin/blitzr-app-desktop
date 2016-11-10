@@ -1,78 +1,68 @@
 // @flow
 import React, {Component, PropTypes} from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Appbar from 'muicss/lib/react/appbar';
 import Button from 'muicss/lib/react/button';
 
 import styles from './NavBar.css';
-import {routesBar, history} from '../env';
+import NavButton from './nav-bar/nav-button';
+import SideNavBar from './nav-bar/side-nav-bar';
+import {routesBar} from '../env';
 
-class GoButton extends Component {
+class CloseButton extends Component {
   static propTypes = {
-    location: PropTypes.element.isRequired,
-    name: PropTypes.string.isRequired
+    onClick: PropTypes.func.isRequired
   };
 
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.__click = this.__click.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
 
-  __click() {
-    history.push(this.props.location);
-  }
 
   render() {
     return (
-      <Button size="small" color="primary" onClick={this.__click}>{this.props.name}</Button>
-    )
-  }
-}
-
-class CurrentButton extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired
-  };
-
-  render() {
-    return (
-      <Button size="small" color="accent" disabled={true}>{this.props.name}</Button>
-    )
-  }
-}
-
-class NavButton extends Component {
-  static propTypes = {
-    location: PropTypes.element.isRequired,
-    go: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
-  };
-
-  render() {
-    if (this.props.go) {
-      return (<GoButton location={this.props.location} name={this.props.name}/>);
-    } else {
-      return (<CurrentButton name={this.props.name}/>);
-    }
+      <Button onClick={this.props.onClick}>
+        <i className="fa fa-bars fa-2x" aria-hidden="true"/>
+      </Button>);
   }
 }
 
 
 export default class NavBar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.___onHideOrClose = this.___onHideOrClose.bind(this);
+    this.state = {
+      sidebar: false
+    };
+  }
+
+  ___onHideOrClose() {
+    const sidebar = !this.state.sidebar;
+    this.setState({sidebar});
+  }
+
   render() {
     const {location} = this.props;
+    const ___onHideOrClose = this.___onHideOrClose;
     const routesButtons = routesBar.map((r, k) => {
       const go = location !== r.path;
-      return (<NavButton key={k} location={r.path} go={go} name={r.name}/>);
+      return (<NavButton key={k} route={r.path} go={go} name={r.name}/>);
     });
-
+    const sidebar = (this.state.sidebar) ? (<SideNavBar location={location} onClose={___onHideOrClose}/>) : (<div/>);
     return (
       <Appbar >
         <div className={styles.container}>
           <div><h1>Music.desk</h1></div>
-          <div className="right">
+          <div className={styles.container__right}>
             {routesButtons}
           </div>
+          <div className={styles.container__sidenavbutton}><CloseButton onClick={___onHideOrClose}/></div>
         </div>
+        {sidebar}
       </Appbar>);
   }
 }

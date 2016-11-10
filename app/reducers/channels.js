@@ -2,7 +2,7 @@
 import {CHANNLES_ADD} from '../actions/channels';
 const defaultState = {results: []};
 
-export function channels(state = defaultState, action: Object) {
+export default function channels(state = defaultState, action: Object) {
   let clone;
   switch (action.type) {
     case CHANNLES_ADD:

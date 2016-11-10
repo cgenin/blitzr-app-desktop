@@ -40,7 +40,6 @@ export default class YoutubeForm extends Component {
 
   render() {
     const {q} = this.props;
-    console.log(q);
     const label = (!!q) ? `last search : ${q}` : 'Search ...';
     return (
       <Container fluid={true}>

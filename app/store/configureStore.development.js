@@ -8,11 +8,13 @@ import rootReducer from '../reducers';
 import * as counterActions from '../actions/counter';
 import * as screensActions from '../actions/screens';
 import * as youtubeActions from '../actions/youtube-search';
+import * as channelsActions from '../actions/channels';
 
 const actionCreators = {
   ...counterActions,
   ...screensActions,
   ...youtubeActions,
+  ...channelsActions,
   push,
 };
 
