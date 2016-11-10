@@ -23,7 +23,10 @@ export default class YoutubeForm extends Component {
     this.setState({q});
   }
 
-  __onSubmit() {
+  __onSubmit(evt) {
+    if (evt) {
+      evt.preventDefault();
+    }
     this.props.onSearch(this.state.q);
     return false;
   }
@@ -44,8 +47,9 @@ export default class YoutubeForm extends Component {
 
         <Form onSubmit={this.__onSubmit}>
           <Row>
-            <Col md="9" sm="12" ><Input label={label} onChange={this.__onChange} defaultValue={q} style={{width: '100%'}}/></Col>
-            <Col md="3" sm="12"><Button color="primary">Submit</Button></Col>
+            <Col sm="9" xs="12"><Input label={label} onChange={this.__onChange} defaultValue={q}
+                                       style={{width: '100%'}}/></Col>
+            <Col sm="3" xs="12"><Button color="primary">Submit</Button></Col>
           </Row>
 
 

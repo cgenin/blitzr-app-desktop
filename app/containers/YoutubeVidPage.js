@@ -8,6 +8,7 @@ import * as youtubeActions from '../actions/youtube-search';
 
 function mapStateToProps(state) {
   const {q, items} = state.youtubeSearch;
+  console.log(state);
   return {q, items};
 }
 
