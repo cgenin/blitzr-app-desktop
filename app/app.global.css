@@ -11,13 +11,6 @@ body {
     overflow-y: hidden;
 }
 
-h2 {
-    margin: 0;
-    font-size: 2.25rem;
-    font-weight: bold;
-    letter-spacing: -.025em;
-    color: #fff;
-}
 
 p {
     font-size: 24px;
@@ -37,6 +30,13 @@ a:hover {
     opacity: 1;
     text-decoration: none;
     cursor: pointer;
+}
+
+blockquote {
+    padding: 5px 2px 5px 10px;
+    margin: 0 0 0px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
 }
 
 
