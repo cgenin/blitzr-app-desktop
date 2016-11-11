@@ -6,6 +6,12 @@ import WindowListener from './WindowListener';
 
 
 export default class Blitzr extends Component {
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+
   render() {
     const screenHeight = this.props.screenHeight || 100;
     const height = screenHeight - 100;

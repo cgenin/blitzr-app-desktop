@@ -1,0 +1,25 @@
+.title {
+    padding: 8px;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+.buttons button {
+    background-color: #de1313;
+    padding-left: 11px;
+    padding-top: 5px;
+}
+
+.vid {
+    width: 100%;
+    padding: 2px;
+}
+
+.webview {
+    display: inline-flex;
+    height: 70vh;
+    width: 100%;
+    margin: auto;
+}
