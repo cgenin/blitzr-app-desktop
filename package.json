@@ -21,7 +21,9 @@
     "package-win": "npm run build && build --win --x64",
     "package-linux": "npm run build && build --linux",
     "package-all": "npm run build && build -mwl",
-    "cleanup": "mop -v"
+    "cleanup": "mop -v",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "build": {
     "appId": "org.develar.ElectronReact",
@@ -154,10 +156,12 @@
     "react-swipeable": "^3.7.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "source-map-support": "^0.4.6"
+    "source-map-support": "^0.4.6",
+    "snyk": "^1.319.0"
   },
   "devEngines": {
     "node": ">=6.x",
     "npm": ">=3.x"
-  }
+  },
+  "snyk": true
 }
